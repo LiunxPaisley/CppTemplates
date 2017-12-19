@@ -4,20 +4,24 @@ project(Stack1 CXX)
 set(CMAKE_CXX_STANDARD 17)
 
 # 指定静态库的位置
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/lib)
+# CMAKE_BINARY_DIR代表执行cmake命令的当前目录，比如在build目录下执行则CMAKE_BINARY_DIR代表build
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 # 指定执行文件位置
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 include_directories("./include")
 
 # 链接库的位置
-link_directories(${CMAKE_BINARY_DIR}/build/lib)
+link_directories(${CMAKE_BINARY_DIR}/lib)
 
 message(warning " this is BINARY dir" ${CMAKE_BINARY_DIR})
 message(warning " this is SOURCE dir" ${CMAKE_SOURCE_DIR})
 
 add_executable(Stack1 main.cpp)
 
-# cmake --build ./cmake-build  --target Stack1 -- -j 2
+# 分离编译
+# cd build
+# cmake .. -G "MinGW Makefiles"
+# mingw32-make
