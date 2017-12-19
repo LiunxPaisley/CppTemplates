@@ -1,7 +1,9 @@
 #include <vector>
 #include <stdexcept>
 
-template <typename T>
+using std::vector;
+
+template <typename T, typename CONT = vector<T> >
 class Stack
 {
   public:
@@ -11,17 +13,17 @@ class Stack
     bool empty() const { return elems.empty(); }
 
   private:
-    std::vector<T> elems;
+    CONT elems;
 };
 
-template <typename T>
-void Stack<T>::push(T const &_elem)
+template <typename T, typename CONT = vector<T> >
+void Stack<T, CONT>::push(T const &_elem)
 {
     elems.push_back(_elem);
 }
 
-template <typename T>
-T Stack<T>::pop()
+template <typename T, typename CONT = vector<T> >
+T Stack<T, CONT>::pop()
 {
     if (elems.empty())
     {
@@ -32,8 +34,8 @@ T Stack<T>::pop()
     return elem;
 }
 
-template <typename T>
-T Stack<T>::top() const
+template <typename T, typename CONT = vector<T> >
+T Stack<T, CONT>::top() const
 {
     if (elems.empty())
     {
