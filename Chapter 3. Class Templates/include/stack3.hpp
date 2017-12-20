@@ -1,4 +1,5 @@
 #include <vector>
+#include <deque>
 #include <stdexcept>
 
 using std::vector;
@@ -7,7 +8,7 @@ template <typename T, typename CONT = vector<T> >
 class Stack
 {
   public:
-    void push(T const &);
+    void push(const T&);
     T pop();
     T top() const;
     bool empty() const { return elems.empty(); }
@@ -16,13 +17,16 @@ class Stack
     CONT elems;
 };
 
-template <typename T, typename CONT = vector<T> >
-void Stack<T, CONT>::push(T const &_elem)
+/**
+ * 这里不能加CONT的默认参数
+*/
+template <typename T, typename CONT>
+void Stack<T, CONT>::push(const T& _elem)
 {
     elems.push_back(_elem);
 }
 
-template <typename T, typename CONT = vector<T> >
+template <typename T, typename CONT>
 T Stack<T, CONT>::pop()
 {
     if (elems.empty())
@@ -34,7 +38,7 @@ T Stack<T, CONT>::pop()
     return elem;
 }
 
-template <typename T, typename CONT = vector<T> >
+template <typename T, typename CONT>
 T Stack<T, CONT>::top() const
 {
     if (elems.empty())

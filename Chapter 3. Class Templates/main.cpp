@@ -2,8 +2,8 @@
 #include <string>
 #include <cstdlib>
 
-#define USE_STACK1
-//#define USE_STACK3
+//#define USE_STACK1
+#define USE_STACK3
 
 #ifdef USE_STACK1
 #include "stack1.hpp"
