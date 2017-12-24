@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.8)
 project(Stack4 CXX)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 #set(CMAKE_CXX_COMPILER "clang++")
 #set(CMKAE_CXX_FLAGS "-g -Og -Wall -fcolor-diagnostics -I C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.1.0/include -L C:/LLVM/lib/gcc/x86_64-w64-mingw32/7.1.0/lib --target=x86_64-w64-mingw")
 # 指定静态库的位置
