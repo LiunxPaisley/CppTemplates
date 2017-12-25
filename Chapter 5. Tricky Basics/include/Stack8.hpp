@@ -58,7 +58,7 @@ template <typename T, template <typename, typename> class CONT>
 template <typename T2, template <typename, typename> class CONT2>
 Stack<T, CONT> &Stack<T, CONT>::operator=(const Stack<T2, CONT2> &rhs)
 {
-    if((void*)this == (void*)&rhs)
+    if(static_cast<void*>(this) == const_cast<void*>(static_cast<const void*>(&rhs)))
     {
         return *this;
     }
