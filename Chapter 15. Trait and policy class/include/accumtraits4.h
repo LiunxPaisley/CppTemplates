@@ -1,6 +1,10 @@
 #ifndef _ACCUMTRAITS4_H_
 #define _ACCUMTRAITS4_H_
 
+/**
+ * 用于告知编译器所需要模板参数的信息
+ */ 
+
 template <typename T>
 class AccumulationTraits;
 
