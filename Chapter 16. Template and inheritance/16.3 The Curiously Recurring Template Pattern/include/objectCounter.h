@@ -18,7 +18,7 @@ protected:
     // 拷贝构造函数
     ObjectCounter(const ObjectCounter<CountedType>&)
     {
-        ++ObjectedCounter<CountedType>::count;
+        ++ObjectCounter<CountedType>::count;
     }
 
     // 析构函数
