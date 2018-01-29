@@ -1,5 +1,5 @@
-#ifndef _IFTHENELSE_H_
-#define _IFTHENELSE_H_
+#ifndef IF_THEN_ELSE_H_
+#define IF_THEN_ELSE_H_
 
 // 基本模板
 template <bool C, typename Ta, typename Tb>
@@ -20,4 +20,4 @@ public:
     typedef Tb ResultT;
 };
 
-#endif // !_IFTHENELSE_H_
+#endif // IF_THEN_ELSE_H_

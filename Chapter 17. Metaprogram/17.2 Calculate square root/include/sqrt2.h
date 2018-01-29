@@ -13,6 +13,8 @@ public:
         mid = (LO + HI + 1) / 2
     };
     // 使用二分法查找一个较小的值
+    // 使用ifThenElse模板减少需要特化的模板
+    // 在ifThenElse模板中只会特化被选择的模板
     typedef typename ifThenElse<(N < mid * mid), Sqrt<N, LO, mid - 1>, Sqrt<N, mid, HI>>::ResultT SubT;
     enum
     {
