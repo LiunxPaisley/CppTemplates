@@ -7,7 +7,7 @@ template <typename T>
 class isFunctionType
 {
 private:
-    typedef char one;
+    typedef char One;
     typedef struct
     {
         char a[2];
@@ -17,7 +17,7 @@ private:
     static One test(...);
 
     template <typename U>
-    statci Two test(U (*)[1]);
+    static Two test(U (*)[1]);
 
 public:
     enum

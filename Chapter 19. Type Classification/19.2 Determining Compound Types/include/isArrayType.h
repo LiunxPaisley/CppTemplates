@@ -3,7 +3,9 @@
 
 #include <cstddef> // 定义了各种变量类型和宏。这些定义中的大部分也出现在其它头文件中。
 
-#include "isCompoundType.h"
+//#include "isCompoundType.h"
+// 辨别函数类型和组合类型基本模板
+#include "../../19.3 Identifying Function Types/include/isFunctionType1.h"
 
 // 针对数组的局部特化
 template <typename T, size_t N>

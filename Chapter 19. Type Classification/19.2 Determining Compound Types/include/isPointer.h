@@ -1,7 +1,9 @@
 #ifndef IS_POINTER_H_
 #define IS_POINTER_H_
 
-#include "isCompoundType.h"
+//#include "isCompoundType.h"
+// 辨别函数类型和组合类型基本模板
+#include "../../19.3 Identifying Function Types/include/isFunctionType1.h"
 
 template <typename T>
 class isCompoundType<T *>

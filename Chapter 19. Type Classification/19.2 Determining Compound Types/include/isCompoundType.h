@@ -1,6 +1,7 @@
 #ifndef IS_COMPOUND_TYPE_H_
 #define IS_COMPOUND_TYPE_H_
 
+// 基本模板
 template <typename T>
 class isCompoundType
 {

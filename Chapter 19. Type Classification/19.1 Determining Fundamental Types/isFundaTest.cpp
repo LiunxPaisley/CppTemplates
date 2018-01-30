@@ -1,4 +1,4 @@
-#include "./include/type1.h"
+#include "./include/isFunda.h.h"
 #include <iostream>
 
 template <typename T>
