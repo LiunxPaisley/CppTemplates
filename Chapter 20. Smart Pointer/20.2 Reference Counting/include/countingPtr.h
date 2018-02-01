@@ -129,9 +129,10 @@ public:
     {
         return this->object_pointed_to ? &BoolConversionSupport::dummy : 0;
     }
+
     /**
-     * 这两个运算符函数，必须依赖于模板参数，
-     * 只能实现为类内部的友元定义
+     * 这两个运算符函数，必须依赖于模板参数，只能实现为类内部的友元定义
+     * 因为如果不实现成友元的话，运算符的调用就只能写成class.operator==<T,CP,OP>(cp,p)了
      */
 public:
     friend bool operator==(const CountingPtr<T, CP, OP> &cp, const T *p)
