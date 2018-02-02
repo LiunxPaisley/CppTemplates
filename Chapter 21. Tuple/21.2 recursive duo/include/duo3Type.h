@@ -1,5 +1,5 @@
-#ifndef Duo_H_
-#define Duo_H_
+#ifndef Duo3_TYPE_H_
+#define Duo3_TYPE_H_
 
 #include "../../21.1 Duo/include/duo.h"
 
@@ -31,7 +31,7 @@ template <int N, typename A, typename B, typename C>
 class DuoType<N, Duo<A, Duo<B, C>>>
 {
 public:
-    typedef typename DuoType<N - 1, Duo<B, C>>::ResultT ResultT;
+    typedef typename DuoType<N - 1, Duo<B, C> >::ResultT ResultT;
 };
 
 // 针对可递归Duo第1个域的类型的特化
@@ -51,4 +51,4 @@ public:
 };
 
 
-#endif // Duo_H_
+#endif // Duo3_TYPE_H_

@@ -1,5 +1,7 @@
-#ifndef DUO_RECURSIVE_H_
-#define DUO_RECURSIVE_H_
+#ifndef DUO1_RECURSIVE_H_
+#define DUO1_RECURSIVE_H_
+
+#include "../../21.1 Duo/include/duo.h"
 
 template <typename A, typename B, typename C>
 class Duo<A, Duo<B, C>>
@@ -110,4 +112,4 @@ public:
     }
 };
 
-#endif // DUO_RECURSIVE_H_
+#endif // DUO1_RECURSIVE_H_
