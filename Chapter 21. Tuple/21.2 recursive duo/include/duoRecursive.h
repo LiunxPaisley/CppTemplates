@@ -1,16 +1,17 @@
-#ifndef Duo_H_
-#define Duo_H_
+#ifndef DUO_RECURSIVE_H_
+#define DUO_RECURSIVE_H_
 
-template <typename T1, typename T2>
-class Duo
+template <typename A, typename B, typename C>
+class Duo<A, Duo<B, C>>
 {
 public:
-    typedef T1 Type1; // 第1个域的类型
-    typedef T2 Type2; // 第2个域的类型
+    typedef A T1;
+    typedef Duo<B, C> T2;
     enum
     {
-        N = 2
-    }; // 域的个数
+        N = Duo<B, C>::N + 1
+    };
+
 private:
     T1 value1; // 第1个域的值
     T2 value2; // 第2个域的值
@@ -64,26 +65,49 @@ public:
     }
 };
 
-// 比较运算符（允许混合类型）
-template <typename T1, typename T2,
-          typename U1, typename U2>
-inline bool operator==(const Duo<T1, T2> &d1, const Duo<U1, U2> &d2)
+//  针对只含有一个域的Duo<>局部特化
+template <typename A>
+struct Duo<A, void>
 {
-    return (d1.v1() == d2.v2()) && (d1.v2() == d2.v2());
-}
+public:
+    typedef A T1;    // 第1个域的值
+    typedef void T2; // 第2个域的值
+    enum
+    {
+        N = 1
+    }; // 域的个数
+private:
+    T1 value1; // 第2个域的值
+public:
+    // 构造函数
+    Duo()
+        : value1()
+    {
+    }
 
-template <typename T1, typename T2,
-          typename U1, typename U2>
-inline bool operator!=(const Duo<T1, T2> &d1, const Duo<U1, U2> &d2)
-{
-    return !(d1==d2);
-}
+    Duo(const T1 &a)
+        : value1(a)
+    {
+    }
 
-// 针对创建和初始化的辅助函数
-template <typename T1, typename T2>
-inline Duo<T1, T2> make_duo(const T1 &a, const T2 &b)
-{
-    return Duo<T1, T2>(a, b);
-}
+    // 域访问函数
+    T1 &v1()
+    {
+        return value1;
+    }
 
-#endif // Duo_H_
+    const T1 &v1() const
+    {
+        return value1;
+    }
+
+    void v2()
+    {
+    }
+
+    void v2() const
+    {
+    }
+};
+
+#endif // DUO_RECURSIVE_H_
