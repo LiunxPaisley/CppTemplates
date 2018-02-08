@@ -24,8 +24,8 @@ int main()
     foo(); // 直接调用
 
     // 输出foo和FooT的类型
-    TYPE_OF(foo)
-    TYPE_OF(FooT)
+    TYPE_OF(foo);
+    TYPE_OF(FooT);
 
     FooT *pf = foo; // 隐式转型(decay)
     pf();           // 通过指针的间接调用
@@ -33,12 +33,12 @@ int main()
 
     // 打印出pf的类型
     // 继续保留了typedef的名称
-    TYPE_OF(pf)
+    TYPE_OF(pf);
     
 
     FooT &rf = foo; // 没有隐式转型
     rf();           // 通过引用的间接调用
 
     // 输出rf的类型
-    TYPE_OF(rf)
+    TYPE_OF(rf);
 }
