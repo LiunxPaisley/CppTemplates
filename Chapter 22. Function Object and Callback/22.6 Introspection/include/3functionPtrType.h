@@ -32,6 +32,7 @@ public:
 template <typename RT, typename P1>
 class FunctionPtrType<RT, P1, void, void>
 {
+public:
     enum
     {
         NumParams = 1
@@ -43,6 +44,7 @@ class FunctionPtrType<RT, P1, void, void>
 template <typename RT>
 class FunctionPtrType<RT, void, void, void>
 {
+public:
     enum
     {
         NumParams = 0
