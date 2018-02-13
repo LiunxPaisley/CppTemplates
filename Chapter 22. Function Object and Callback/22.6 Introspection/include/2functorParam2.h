@@ -9,7 +9,7 @@
         typedef typename F::Param##N##T Type; \
     }
 
-FunctorParamSpec(1);
+//FunctorParamSpec(1);
 FunctorParamSpec(2);
 FunctorParamSpec(3);
 FunctorParamSpec(4);
@@ -26,16 +26,7 @@ FunctorParamSpec(14);
 FunctorParamSpec(15);
 FunctorParamSpec(16);
 FunctorParamSpec(17);
-FunctorParamSpec(18);FunctorParamSpec(1);
-FunctorParamSpec(2);
-FunctorParamSpec(3);
-FunctorParamSpec(4);
-FunctorParamSpec(5);
-FunctorParamSpec(6);
-FunctorParamSpec(7);
-FunctorParamSpec(8);
-FunctorParamSpec(9);
-FunctorParamSpec(1);
+FunctorParamSpec(18);
 FunctorParamSpec(19);
 FunctorParamSpec(20);
 

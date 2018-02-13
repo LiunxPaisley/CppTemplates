@@ -1,6 +1,9 @@
-#include "./include/2compose.h"
-#include "./include/1math.h"
 #include <iostream>
+
+
+#include "./include/compose1.h"
+#include "./include/composeConv.h"
+#include "./include/math1.h"
 
 template <typename FO>
 void print_values(FO fo)
@@ -14,7 +17,7 @@ void print_values(FO fo)
 int main()
 {
     // 输出sin(abs(0.5))
-    std::cout << Composer<Abs, Sine>(Abs(), Sine())(0.5) << "\n"
+    std::cout << compose(Abs(), Sine())(0.5) << "\n"
               << std::endl;
 
     // 输出某些值的abs()
@@ -26,10 +29,10 @@ int main()
     std::cout << std::endl;
     
     // 输出某些值的sin(abs())
-    print_values(Composer<Abs, Sine>(Abs(), Sine()));
+    print_values(compose(Abs(), Sine()));
     std::cout << std::endl;
 
     // 输出某些值的abs(sin())
-    print_values(Composer<Sine, Abs>(Sine(), Abs()));
+    print_values(compose(Sine(), Abs()));
     std::cout << std::endl;
 }

@@ -7,7 +7,7 @@ template <typename F, int N>
 class UsedFunctorParam;
 
 template <typename F, int N>
-class FunctionParam
+class FunctorParam
 {
 private:
     class Unused
@@ -24,7 +24,8 @@ private:
 public:
     typedef typename ifThenElse<F::NumParams >= N,
                                 UsedFunctorParam<F, N>,
-                                Unused>::ResultT::Type Type;
+                                Unused>::ResultT::Type
+        Type;
 };
 
 template <typename F>
