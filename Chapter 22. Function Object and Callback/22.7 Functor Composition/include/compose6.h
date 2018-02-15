@@ -57,14 +57,14 @@ public:
     }
 
 
-    ReturnT operator()(typename ForwardParamType<Param1T>::Type v1)
+    ReturnT operator()(typename ForwardParamT<Param1T>::Type v1)
     {
         return BaseMem<FO2, 2>::operator()(BaseMem<FO1, 1>::operator()(v1));
     }
 
 
-    ReturnT operator()(typename ForwardParamType<Param1T>::Type v1,
-                       typename ForwardParamType<Param2T>::Type v2)
+    ReturnT operator()(typename ForwardParamT<Param1T>::Type v1,
+                       typename ForwardParamT<Param2T>::Type v2)
     {
         return BaseMem<FO2, 2>::operator()(BaseMem<FO1, 1>::operator()(v1, v2));
     }

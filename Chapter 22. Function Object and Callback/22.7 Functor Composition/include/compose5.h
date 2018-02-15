@@ -28,7 +28,7 @@ public:
     {
     }
 
-    double operator()(typename ForwardParamType<Param1T>::Type v)
+    double operator()(typename ForwardParamT<Param1T>::Type v)
     {
         return BaseMem<FO1, 1>::operator()(BaseMem<FO2, 2>::operator()(v));
     }

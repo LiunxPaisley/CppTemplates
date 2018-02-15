@@ -36,18 +36,18 @@ public:
     {
         return fptr();
     }
-    RT operator()(typename ForwardParamType<P1>::Type a1)
+    RT operator()(typename ForwardParamT<P1>::Type a1)
     {
         return fptr(a1);
     }
-    RT operator()(typename ForwardParamType<P1>::Type a1,
-                  typename ForwardParamType<P2>::Type a2)
+    RT operator()(typename ForwardParamT<P1>::Type a1,
+                  typename ForwardParamT<P2>::Type a2)
     {
         return fptr(a1, a2);
     }
-    RT operator()(typename ForwardParamType<P1>::Type a1,
-                  typename ForwardParamType<P2>::Type a2,
-                  typename ForwardParamType<P3>::Type a3)
+    RT operator()(typename ForwardParamT<P1>::Type a1,
+                  typename ForwardParamT<P2>::Type a2,
+                  typename ForwardParamT<P3>::Type a3)
     {
         return fptr(a1, a2, a3);
     }

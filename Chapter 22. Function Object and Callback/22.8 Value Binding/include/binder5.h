@@ -19,7 +19,7 @@ public:
         NumParams = FO::NumParams - 1
     };
     // 返回类型是直接委托过来的
-    typedef typename FO::ResultT ResultT;
+    typedef typename FO::ReturnT ReturnT;
 
     // 参数的类型
     typedef BinderParams<FO, P> Params;

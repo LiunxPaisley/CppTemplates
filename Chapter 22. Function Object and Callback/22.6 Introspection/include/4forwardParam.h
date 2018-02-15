@@ -9,7 +9,7 @@
 // 对于其他所有类型，ForwardParamType<T>::Type是普通类型
 // 对于void类型，ForwardParamType<T>::Type是哑类型（Unused）
 template <typename T>
-class ForwardParamType
+class ForwardParamT
 {
 public:
     typedef typename ifThenElse<TypeT<T>::IsClassT,
@@ -19,7 +19,7 @@ public:
 };
 
 template <>
-class ForwardParamType<void>
+class ForwardParamT<void>
 {
 private:
     class Unused

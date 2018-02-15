@@ -6,7 +6,7 @@
 #include "../../22.6 Introspection/include/2functorParam2.h"
 
 
-template <typename F, int F>
+template <typename F, int P>
 class BinderParams
 {
 public:
