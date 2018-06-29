@@ -9,29 +9,49 @@ void swap(T& a, T& b)
     b      = a;
     a      = temp;
 }
-template <int a, int b, typename T>
-void partition(T* data)
-{
-    size_t i = a;
-    size_t j = b;
-    T x = 
-    for ()
-    {
 
+template <int i, int j, int x, typename T>
+int partitionLoop(T* data)
+{
+    if(data[j] <= data[x])
+    {
+        swap(data[i], data[j]);
+        return partitionLoop<i+1, j-1, x>(data);
     }
-        partition<a, (a + b) / 2>(data);
-    partition<(a + b) / 2, b>(data);
+    else
+    {
+        return partitionLoop<i, j-1, x>(data);
+    }
+    
+}
+
+// j = 0的时候返回i
+template <int i, int x, typename T>
+int partitionLoop<i, 0, x, T>
+{
+    swap(data[i], data[x]);
+    return i;
+}
+
+template <int a, int b, typename T>
+int partition(T* data)
+{
+    partitionLoop<a, b-1, b>(data);
+}
+
+
+
+template <int a, int b, typename T>
+void quicksort(T* data)
+{
+    int p = partition<a, b>(data);
+    quicksort<a, p>(data);
+    quicksort<p, b>(data);
 }
 
 template <int a, typename T>
-void partition<a, a>()
+void quicksort<a, a>()
 {
-}
-
-template <int num, typename T>
-void quicksort(T* data)
-{
-    partition<0, num>(data);
 }
 
 int main()
