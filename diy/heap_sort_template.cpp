@@ -45,6 +45,7 @@ struct list_item<null>
 {
     using type = null;
 };
+
 //为了list和cons巴拉巴拉的真正统一
 template <class T, class... tail>
 using list = typename list_item<T, tail...>::type;

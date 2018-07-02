@@ -96,7 +96,7 @@ struct partition
     }
 };
 
-template <int a, int b>
+template <bool condition, int a, int b>
 struct quickSort
 {
     //enum { i = a - 1, j = 0};
@@ -106,6 +106,17 @@ struct quickSort
         quickSort<a, p>::func(data);
         quickSort<p, b>::func(data);
     }
+};
+
+template <int a, int b>
+struct quickSort<false, a, b>
+{
+};
+
+template <int a, int b>
+struct quickSort<true, a, b>
+{
+
 };
 
 int main()
