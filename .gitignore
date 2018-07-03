@@ -1,4 +1,6 @@
-## date +%Y-%m-%d-%A%H:%M:%S
+## git add --all ./
+## git commit -m `date +%Y-%m-%d-%A%H:%M:%S`
+## git push
 
 ################
 # CMake
