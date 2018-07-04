@@ -1,1 +1,1 @@
-add_executable(2.1 2.1.cpp type_name.h)
+add_executable(2.3 type_name.h 2.3.cpp)

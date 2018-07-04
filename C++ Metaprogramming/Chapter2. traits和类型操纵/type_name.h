@@ -7,16 +7,16 @@
 
 #include <stdio.h>
 
-
 #include <typeinfo>
 #include <cxxabi.h>
 //#include <utility> //std::move
 //
-//class type_name
+// class type_name
 //{
-//public:
+// public:
 //    template <typename T>
-//    type_name(const T t): realname(abi::__cxa_demangle(typeid(T).name(), 0, 0, &status))
+//    type_name(const T t): realname(abi::__cxa_demangle(typeid(T).name(), 0, 0,
+//    &status))
 //    {
 //        printf("%s \n", realname);
 //    }
@@ -25,15 +25,16 @@
 //        delete realname;
 //    }
 //
-//private:
+// private:
 //    int status;
 //    char* realname;
 //
 //};
-#define TYPE_NAME(T) \
-    int status##T = 0; \
-    char* realname##T = abi::__cxa_demangle(typeid(T).name(), 0, 0, &status##T); \
-    printf("%s \n", realname##T); \
+#define TYPE_NAME(T)                                             \
+    int   status##T = 0;                                         \
+    char* realname##T =                                          \
+        abi::__cxa_demangle(typeid(T).name(), 0, 0, &status##T); \
+    printf("%s \n", realname##T);                                \
     delete realname##T;
 // #define TYPE_NAME(i) type_name(std::move(i));
-#endif //TYPE_NAME_H
+#endif  // TYPE_NAME_H
